@@ -12,14 +12,12 @@ body{
 .parent{
   width: 1000px;
   height: 500px;
+  position: relative;
   overflow: hidden;
-  transition-duration: 1s;
-  /* box-shadow: inset 0 0 0 10px lightblue; */
- 
 }
 
 .principal{
-  transition-duration: 1s;
+  transition-duration: 0.5s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,9 +29,27 @@ body{
   background-size: cover;
 }
 
-.parent:hover{
-  box-shadow: inset 0 0 0 10px lightblue;
+.note{
+  width: 300px;
+  height: 300px;
+  font-size: 20px;
+  transition-duration: 0.5s;
+  transform: rotate(45deg);
+  background: white;
+  opacity: 0;
 }
+
+.parent:after{
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition-duration: 0.5s;
+  
+}
+
 
 .parent:hover .principal{
   transform: scale(2);
@@ -45,13 +61,6 @@ body{
   transform: scale(0.5);
 }
 
-.note{
-  width: 300px;
-  height: 300px;
-  font-size: 20px;
-  transition-duration: 1s;
-  transform: rotate(45deg);
-  background: white;
-  opacity: 0;
-
+.parent:hover:after{
+  box-shadow: inset 0 0 0 10px lightblue;
 }
